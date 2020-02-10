@@ -4,41 +4,42 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CheckHappyNumberFunction {
-//    public boolean isHappy(int n) {
-//        Set<Integer> inLoop = new HashSet<>();
-//        
-//        int squareSum;
-//        int remain;
-//        
-//        // Once there is a duplicate, stop the loop and return false
-//        while(inLoop.add(n)){
-//            squareSum = 0;
-//            while(n > 0){
-//                // Getting single digit
-//                remain = n % 10;
-//                
-//                // Adding the square numbers
-//                squareSum = squareSum + remain * remain;
-//                
-//                // Decrease the number of digit by 1 place
-//                n = n / 10;
-//            }
-//            // If its 1, then it is a happy number
-//            if(squareSum == 1){
-//                return true;
-//            } else {
-//                //  Checking next sum now
-//                n = squareSum;
-//            }
-//        
-//        }
-//        return false;
-//    }
+    public boolean isHappy1(int n) {
+        Set<Integer> inLoop = new HashSet<>();
+        
+        int squareSum;
+        int remain;
+        
+        // Once there is a duplicate, stop the loop and return false
+        while(inLoop.add(n)){
+            squareSum = 0;
+            while(n > 0){
+                // Getting single digit
+                remain = n % 10;
+                
+                // Adding the square numbers
+                squareSum = squareSum + remain * remain;
+                
+                // Decrease the number of digit by 1 place
+                n = n / 10;
+            }
+            // If its 1, then it is a happy number
+            if(squareSum == 1){
+                return true;
+            } else {
+                //  Checking next sum now
+                n = squareSum;
+            }
+        
+        }
+        return false;
+    }
 	
 	// Method number 2, easier to understand
-	public boolean isHappy(int n ){
+	public boolean isHappy2(int n ){
 		Set<Integer> set = new HashSet<>();
 	
+		// If this loop break, we know its 1
 		while(n != 1){
 			int current = n;
 			int nextSum = 0;
@@ -65,4 +66,6 @@ public class CheckHappyNumberFunction {
 		// Return true since n becomes 1, which is a happy number
 		return true;
 	}
+	
+	
 }
