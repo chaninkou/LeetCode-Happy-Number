@@ -67,5 +67,38 @@ public class CheckHappyNumberFunction {
 		return true;
 	}
 	
+	// Faster pointer and slow pointer way
+	public boolean isHappy3(int n){
+		// slow will reach to fast if there is duplicates cycle 
+		int slow = n;
+		
+		int fast = findNext(n);
+		
+		// once fast is equal to slow, break
+		// once fast is 1, we got true
+		while(fast != 1 && slow != fast){
+			slow = findNext(slow);
+			
+			fast = findNext(findNext(fast));
+		}
+		
+		return fast == 1;
+	}
+	
+	// Add all the squares from each digits
+	private int findNext(int n){
+		int squaredSum = 0;
+		
+		while(n > 0){
+			int lastDigit = n % 10;
+			
+			squaredSum += (lastDigit * lastDigit);
+			
+			n /= 10;
+		}
+		
+		return squaredSum;
+	}
+	
 	
 }
