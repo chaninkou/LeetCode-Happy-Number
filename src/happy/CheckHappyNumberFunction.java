@@ -82,6 +82,7 @@ public class CheckHappyNumberFunction {
 			fast = findNext(findNext(fast));
 		}
 		
+		// If its 1, then its happy number (true), if not (false)
 		return fast == 1;
 	}
 	
