@@ -68,14 +68,15 @@ public class CheckHappyNumberFunction {
 	}
 	
 	// Faster pointer and slow pointer way
+	// Without using hashset to check if there is duplicates
 	public boolean isHappy3(int n){
 		// slow will reach to fast if there is duplicates cycle 
 		int slow = n;
 		
 		int fast = findNext(n);
 		
-		// once fast is equal to slow, break
-		// once fast is 1, we got true
+		// If fast is 1, then its already a happy number
+		// If slow == fast, there is a cycle
 		while(fast != 1 && slow != fast){
 			slow = findNext(slow);
 			
