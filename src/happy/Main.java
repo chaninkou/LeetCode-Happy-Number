@@ -8,6 +8,6 @@ public class Main {
 		
 		CheckHappyNumberFunction solution = new CheckHappyNumberFunction();
 		
-		System.out.println("Solution: " + solution.isHappy3(n));
+		System.out.println("Solution: " + solution.isHappy2(n));
 	}
 }

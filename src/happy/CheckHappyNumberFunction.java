@@ -36,21 +36,21 @@ public class CheckHappyNumberFunction {
     }
 	
 	// Method number 2, easier to understand
-	public boolean isHappy2(int n ){
+	public boolean isHappy2(int n){
 		Set<Integer> set = new HashSet<>();
 	
 		// If this loop break, we know its 1
 		while(n != 1){
-			int current = n;
+
 			int nextSum = 0;
 			
 			// When current is zero, we know we added up all the digits
-			while(current != 0){
-				int currentDigit = current % 10;
+			while(n != 0){
+				int currentDigit = n % 10;
 				
 				nextSum += currentDigit * currentDigit;
 				
-				current = current/10;
+				n = n /10;
 			}
 			
 			// If the set already contain the next sum, we know it is just a cycle
